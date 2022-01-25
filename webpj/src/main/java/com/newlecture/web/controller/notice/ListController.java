@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -15,12 +16,13 @@ import com.newlecture.web.service.jdbc.JDBCNoticeService;
 public class ListController implements Controller{
 
 	
+	@Autowired // DI를 이곳에서 한다. 만약 무언가 수행하고 싶으면 함수에 autowired하면 된다.
 	private NoticeService noticeService;
 	
-	
-	public void setNoticeService(NoticeService noticeService) {
-		this.noticeService = noticeService;
-	}
+//	public void setNoticeService(NoticeService noticeService) {
+//		this.noticeService = noticeService;
+//		System.out.println("Hello");
+//	}
 
 
 	@Override
