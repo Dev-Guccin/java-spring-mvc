@@ -31,8 +31,6 @@ public class ListController implements Controller{
 		
 		System.out.println("ListController");
 		
-		
-
 		ModelAndView mv = new ModelAndView("notice.list");
 		//mv.setViewName("/WEB-INF/view/notice/list.jsp"); // 상대경로로 쓰면 url과 겹쳐서 망가짐.
 		List<Notice> list = noticeService.getList(1, "TITLE", "");

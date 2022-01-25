@@ -1,7 +1,6 @@
 package com.newlecture.web.service.jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,10 +12,12 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
 
+@Service // 발견하기 위해서는 어디를 찾아달라고 요청해야한다.
 public class JDBCNoticeService implements NoticeService{
 //	private String url = "jdbc:mysql://localhost:3306/test";
 //	private String uid = "root";
