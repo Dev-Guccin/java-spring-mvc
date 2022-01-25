@@ -8,12 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class IndexController{
+@RequestMapping("/")
+public class HomeController{ // 컨트롤들을 담는 컨테이너로서 사용한다.
 
-	@RequestMapping("/index")
-	public void aaaa() {
+	@RequestMapping("index")
+	public String index() {
 		System.out.println("index!!");
+		
+		return "root.index"; // tiles에서 resolving이 가능하므로 문자열을 반환하면 된다.
 	}
+	
 //	@Override
 //	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 //		// TODO Auto-generated method stub
