@@ -22,11 +22,11 @@ public class NoticeController { // 이 이름에 따라 IOC컨테이너 안에�
 
 	@RequestMapping("list")
 	public String list() {
-		return "";
+		return "admin.board.notice.list";
 	}
 
 	@RequestMapping("reg")
-	@ResponseBody
+//	@ResponseBody
 	public String reg(String title, String content, MultipartFile file, HttpServletRequest request) {
 
 		long filesize = file.getSize();
@@ -57,13 +57,14 @@ public class NoticeController { // 이 이름에 따라 IOC컨테이너 안에�
 
 
 
-		return String.format("title:%s, content:%s<br>", title, content);
+		//return String.format("title:%s, content:%s<br>", title, content);
+		return "admin.board.notice.list";
 	}
 
 	@RequestMapping("edit")
 	public String edit() {
 
-		return "edit";
+		return "admin.board.notice.edit";
 	}
 
 	@RequestMapping("del")
