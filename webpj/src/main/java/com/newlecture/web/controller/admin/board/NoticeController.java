@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,8 +26,15 @@ public class NoticeController { // 이 이름에 따라 IOC컨테이너 안에�
 	public String list() {
 		return "admin.board.notice.list";
 	}
+	
+	@GetMapping("reg")
+	public String reg() {
+		
+		return "admin.board.notice.reg";
+	}
 
-	@RequestMapping("reg")
+
+	@PostMapping("reg")
 //	@ResponseBody
 	public String reg(String title, String content, MultipartFile file, HttpServletRequest request) {
 
